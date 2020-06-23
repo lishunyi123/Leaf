@@ -266,7 +266,7 @@ public class SegmentIDGenImpl implements IDGen {
                     TimeUnit.MILLISECONDS.sleep(10);
                     break;
                 } catch (InterruptedException e) {
-                    logger.warn("Thread {} Interrupted",Thread.currentThread().getName());
+                    logger.warn("Thread {} Interrupted", Thread.currentThread().getName());
                     break;
                 }
             }
@@ -275,6 +275,14 @@ public class SegmentIDGenImpl implements IDGen {
 
     public List<LeafAlloc> getAllLeafAllocs() {
         return dao.getAllLeafAllocs();
+    }
+
+    public Integer addTag(LeafAlloc leafAlloc) {
+        LeafAlloc alloc = dao.getLeafAlloc(leafAlloc.getKey());
+        if (alloc == null) {
+            return 0;
+        }
+        return dao.addTag(leafAlloc);
     }
 
     public Map<String, SegmentBuffer> getCache() {

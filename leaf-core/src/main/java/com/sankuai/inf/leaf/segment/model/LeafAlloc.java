@@ -5,6 +5,7 @@ public class LeafAlloc {
     private long maxId;
     private int step;
     private String updateTime;
+    private String description;
 
     public String getKey() {
         return key;
@@ -36,5 +37,13 @@ public class LeafAlloc {
 
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

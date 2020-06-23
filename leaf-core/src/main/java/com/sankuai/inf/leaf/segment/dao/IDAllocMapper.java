@@ -33,4 +33,6 @@ public interface IDAllocMapper {
     @Select("SELECT biz_tag FROM leaf_alloc")
     List<String> getAllTags();
 
+    @Insert("INSERT INTO leaf_alloc (biz_tag, max_id, step, `description`) VALUES (#{key}, #{maxId}, #{step}, #{description})")
+    int addTag(@Param("leafAlloc") LeafAlloc leafAlloc);
 }

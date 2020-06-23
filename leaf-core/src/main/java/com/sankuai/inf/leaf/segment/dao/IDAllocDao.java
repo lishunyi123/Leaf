@@ -6,7 +6,14 @@ import java.util.List;
 
 public interface IDAllocDao {
      List<LeafAlloc> getAllLeafAllocs();
+
      LeafAlloc updateMaxIdAndGetLeafAlloc(String tag);
+
      LeafAlloc updateMaxIdByCustomStepAndGetLeafAlloc(LeafAlloc leafAlloc);
+
      List<String> getAllTags();
+
+     LeafAlloc getLeafAlloc(String tag);
+
+     Integer addTag(LeafAlloc leafAlloc);
 }
